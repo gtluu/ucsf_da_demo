@@ -1,0 +1,32 @@
+body {
+    font-family: "Arial";
+}
+article {
+    width: 30%;
+    position: relative;
+    top: 100px;
+    margin: auto;
+}
+article p {
+    font-size: 16pt;
+}
+article ul {
+    list-style-type: none;
+}
+article ul li {
+    font-size: 16pt;
+    padding: 20px;
+}
+article ul li a {
+    text-decoration: none;
+}
+button {
+    width: 200px;
+    font-family: "Arial";
+    font-size: 12pt;
+    background-color: rgb(245,245,245);
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    margin: 3px;
+    z-index: 10;
+}
