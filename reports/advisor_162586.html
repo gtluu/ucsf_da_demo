@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>UCSF Doctor's Academy</title>
-        <link href="/ucsf_da_demo/css/advisors.css" type="text/css" rel="stylesheet"/>
+        <link href="/ucsf_da_demo/css/student_report.css" type="text/css" rel="stylesheet"/>
         <link href="/ucsf_da_demo/css/header.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
@@ -10,50 +10,57 @@
                 <ul>
                     <li style="float:left"><a href="http://ucsf.edu">UCSF Doctor's Academy</a></li>
                     <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/index.html">Logout</a></li>
-                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/students/admin.html">Students</a></li>
-                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/advisors/admin.html">APC</a></li>
-                    <li style="float: right;width: 175px;text-align: center;border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/home/admin.html">Home</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/students/advisor.html">Students</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/home/advisor.html">Home</a></li>
                 </ul>
             </nav>
             <div id="box">
             </div>
         </header>
-        <form action="/ucsf_da_demo/advisors/index.html">
-            <input type="text" id="advisor_id" name="advisor_id" placeholder="Advisor ID">
-            <select id="school" name="school" required>
-                <option value="All">All</option>
-                <option value="Sunnyside High School">Sunnyside High School</option>
-                <option value="Caruthers High School">Caruthers High School</option>
-                <option value="Selma High School">Selma High School</option>
-            </select><br>
-            <input type="text" id="first_name" name="first_name" placeholder="First Name">
-            <input type="text" id="last_name" name="last_name" placeholder="Last Name"><br><br>
-            <input type="submit" id="filter" name="filter" value="Filter">
-        </form>
-        <table class="centerTable" id="AdvisorTable">
+        <div id="student_info">
+            <p>Student Name: Donald F. Sasaki<br><br>
+            Student ID: 162586<br><br>
+            Expected Graduation Year: 2021<br><br>
+            FMP ID: 560677<br><br>
+            Advisor ID: 465042<br><br>
+            Program Status: Withdrawn</p><br>
+        </div>
+        <table class="centerTable" id="ReportTable">
             <tr style="background-color: rgb(50,50,50); color: rgb(255, 255, 255);">
-                <td onclick="sortTable(0)">Advisor ID</td>
-                <td onclick="sortTable(1)">First Name</td>
-                <td onclick="sortTable(2)">Last Name</td>
-                <td onclick="sortTable(3)">School</td>
+                <td onclick="sortTable(0)">ID</td>
+                <td onclick="sortTable(1)">Date</td>
+                <td onclick="sortTable(2)">Status</td>
+                <td onclick="sortTable(3)">Notes</td>
+                <td onclick="sortTable(4)">GPA</td>
+                <td onclick="sortTable(5)">Student Signature</td>
+                <td onclick="sortTable(6)">Parent Signature</td>
             </tr>
             <tr>
-                <td>020419</td>
-                <td>Meryl</td>
-                <td>Sasaki</td>
-                <td>Caruthers High School</td>
+                <td><a href="">6521517</a></td>
+                <td>2020-06-10 12:00:00</td>
+                <td>Withdrawn</td>
+                <td>Type of Withdrawal: Academic Dismissal---Reason for Withdrawal: Low academic performance.---Student was provided with reinstatement policy: True---Meeting was held with student and parent/guardian: True---Student is provided with Exit Survey link: True</td>
+                <td>0.26</td>
+                <td> </td>
+                <td> </td>
             </tr>
             <tr>
-                <td>310537</td>
-                <td>Mei</td>
-                <td>Silverburgh</td>
-                <td>Selma High School</td>
+                <td><a href="">1493318</a></td>
+                <td>2020-04-20 12:00:00</td>
+                <td>Probation</td>
+                <td>Reason for Program Probation: GPA below 2.8.---How will student successfully exit probation: Raise GPA.</td>
+                <td>2.61</td>
+                <td>Donald F. Sasaki</td>
+                <td> </td>
             </tr>
             <tr>
-                <td>465042</td>
-                <td>George</td>
-                <td>Silverburgh</td>
-                <td>Sunnyside High School</td>
+                <td><a href="">3907894</a></td>
+                <td>2020-02-06 12:00:00</td>
+                <td>Intervention</td>
+                <td>Reason for Program Intervention: Grades have been dropping recently.---What is the plan for intervention: Study more and improve grades/GPA.---How will student successfully exit the intervention: Raise GPA to above 3.20.</td>
+                <td>2.96</td>
+                <td>Donald F. Sasaki</td>
+                <td> </td>
             </tr>
         </table>
         <script>
