@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>UCSF Doctor's Academy</title>
+        <link href="/ucsf_da_demo/css/students.css" type="text/css" rel="stylesheet"/>
+        <link href="/ucsf_da_demo/css/header.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li style="float:left"><a href="http://ucsf.edu">UCSF Doctor's Academy</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/index.html">Logout</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/students/admin.html">Students</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/advisors/admin.html">APC</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/home/admin.html">Home</a></li>
+                </ul>
+            </nav>
+            <div id="box">
+            </div>
+        </header>
+        <form action="/ucsf_da_demo/students/index.html">
+            <input type="text" id="studen_id" name="student_id" placeholder="Student ID">
+            <input type="text" id="first_name" name="first_name" placeholder="First Name">
+            <input type="text" id="last_name" name="last_name" placeholder="Last Name"><br>
+            <select id="school" name="school" required>
+                <option value="All">All</option>
+                <option value="Sunnyside High School">Sunnyside High School</option>
+                <option value="Caruthers High School">Caruthers High School</option>
+                <option value="Selma High School">Selma High School</option>
+            </select>
+            <select id="grade" name="grade" required>
+                <option value="All">All</option>
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+            </select><br>
+            <input type="text" id="min_expected_grad" name="min_expected_grad" placeholder="Expected Graduation (Min)">
+            <input type="text" id="max_expected_grad" name="max_expected_grad" placeholder="Expected Graduation (Max)"><br>
+            <input type="text" id="min_gpa" name="min_gpa" placeholder="GPA (Min)">
+            <input type="text" id="max_gpa" name="max_gpa" placeholder="GPA (Max)">
+            <select id="grade" name="grade" required>
+                <option value="All">All</option>
+                <option value="Good Standing">Good Standing</option>
+                <option value="Intervention">Intervention</option>
+                <option value="Probation">Probation</option>
+                <option value="Excused">Excused</option>
+                <option value="Withdrawn">Withdrawn</option>
+                <option value="Moved">Moved</option>
+            </select><br>
+            <input type="text" id="fmp_id" name="fmp_id" placeholder="FMP ID">
+            <input type="text" id="parent_id" name="parent_id" placeholder="Parent ID">
+            <input type="text" id="advisor_id" name="advisor_id" placeholder="Advisor ID"><br><br>
+            <input type="submit" id="filter" name="filter" value="Filter">
+        </form>
+        <table class="centerTable" id="AdvisorTable">
+            <tr style="background-color: rgb(50,50,50); color: rgb(255, 255, 255);">
+                <td onclick="sortTable(0)">Student ID</td>
+                <td onclick="sortTable(1)">First Name</td>
+                <td onclick="sortTable(2)">Last Name</td>
+                <td onclick="sortTable(3)">School</td>
+                <td onclick="sortTable(4)">Grade</td>
+                <td onclick="sortTable(5)">Exp Grad</td>
+                <td onclick="sortTable(6)">GPA</td>
+                <td onclick="sortTable(7)">Student Status</td>
+                <td onclick="sortTable(8)">FMP ID</td>
+                <td onclick="sortTable(9)">Parent ID(s)</td>
+                <td onclick="sortTable(10)">Advisor ID</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <script>
+        function sortTable(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          table = document.getElementById("AdvisorTable");
+          switching = true;
+          //Set the sorting direction to ascending:
+          dir = "asc";
+          /*Make a loop that will continue until
+          no switching has been done:*/
+          while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+              //start by saying there should be no switching:
+              shouldSwitch = false;
+              /*Get the two elements you want to compare,
+              one from current row and one from the next:*/
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+              /*check if the two rows should switch place,
+              based on the direction, asc or desc:*/
+              if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                  //if so, mark as a switch and break the loop:
+                  shouldSwitch= true;
+                  break;
+                }
+              } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  //if so, mark as a switch and break the loop:
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              /*If a switch has been marked, make the switch
+              and mark that a switch has been done:*/
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              //Each time a switch is done, increase this count by 1:
+              switchcount ++;
+            } else {
+              /*If no switching has been done AND the direction is "asc",
+              set the direction to "desc" and run the while loop again.*/
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+        </script>
+    </body>
+</html>

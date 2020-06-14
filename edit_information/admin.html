@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>UCSF Doctor's Academy</title>
+        <link href="/ucsf_da_demo/css/index.css" type="text/css" rel="stylesheet"/>
+        <link href="/ucsf_da_demo/css/header.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li style="float:left"><a href="http://ucsf.edu">UCSF Doctor's Academy</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/index.html">Logout</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/students/admin.html">Students</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/advisors/admin.html">APC</a></li>
+                    <li style="float: right;width: 175px;text-align: center;border-right:1.5px solid rgb(249,246,249)"><a href="/ucsf_da_demo/home/admin.html">Home</a></li>
+                </ul>
+            </nav>
+            <div id="box">
+            </div>
+        </header>
+        <form action="/ucsf_da_demo/home/admin.html">
+            <input type="text" id="first_name" name="first_name" placeholder="First Name"><br>
+            <input type="text" id="middle_name" name="middle_name" placeholder="Middle Name"><br>
+            <input type="text" id="last_name" name="last_name" placeholder="Last Name"><br>
+            <input type="text" id="email" name="email" placeholder="Email"><br>
+            <input type="text" id="cell_phone" name="cell_phone" placeholder="Cell Phone Number"><br>
+            <input type="text" id="work_phone" name="work_phone" placeholder="Work Phone Number"><br>
+            <input type="text" id="home_phone" name="home_phone" placeholder="Home Phone Number"><br><br>
+            <input type="submit" id="save" name="save" value="Save Changes">
+        </form>
+    </body>
+</html>
